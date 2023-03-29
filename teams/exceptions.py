@@ -12,3 +12,5 @@ class InvalidYearCupError(Exception):
 class ImpossibleTitlesError(Exception):
     def __init__(self, message):
         self.message = message
+
+#class ImpossibleFirstCup(Exception)

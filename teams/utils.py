@@ -18,11 +18,14 @@ def data_processing(dict):
         raise NegativeTitlesError("titles cannot be negative")
 
     count_first = first_cup_played.year - 1930
-    if count_first % 4 != 0:
+    if count_first % 4 != 0 or first_cup_played.year < 1930:
         raise InvalidYearCupError("there was no world cup this year")
+    
     datetime_atual = datetime.now()
     count_total_cups = (datetime_atual.year - first_cup_played.year) // 4
     if dict["titles"] > count_total_cups:
         raise ImpossibleTitlesError("impossible to have more titles than disputed cups")
+    
+
     return dict
 
