@@ -58,7 +58,6 @@ class TeamViewId(APIView):
         for key, value in team_data.items():
             setattr(team, key, value)
         team.save()
-        #? team.update()
         return Response(model_to_dict(team))
 
     def delete(self, request, team_id):
